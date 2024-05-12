@@ -1,19 +1,29 @@
 import { Outlet } from "react-router-dom"
-import { Link } from "react-router-dom"
 import './App.css'
+import { IconBrandGithub, IconBrandInstagram } from '@tabler/icons-react'
+import { Link } from "react-router-dom"
+import { Yo } from '../src/components/Yo.jsx'
+import { ProjectsList } from "./pages/ProjectsList.jsx"
+
 
 function Sidebar() {
   return (
-    <div className='w-300 bg-green-500 h-full grow rounded-lg p-5'>
-      <div className='bg-stone-500 rounded-lg m-3 h-fullw-full flex-col py-4' >
-        <div className='flex-col'>
-          <div className='flex justify-center'>
-            <h1>AAAAAAAAAAAAAAAAAAAAAAAA</h1>
-          </div>
-          <div className='flex'>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia quaerat libero corrupti rem nulla cupiditate cumque, laborum at voluptate quis facere mollitia harum veniam, ea modi sit alias expedita recusandae.</p>
-          </div>
+    <div className='rounded sidebar border'>
+      <div className="vertical py-5 gap-5 px-3">
+        <div className="vertical">
+          <div className="center">
 
+            <Yo className='rounded-full' />
+
+          </div>
+          <h1>Luis Monterroso</h1>
+        <p>lmonterroso-2022135@kinal.edu.gt</p>
+        </div>
+        
+        <div className="horizontal gap-5">
+          <button className="publicarBtn">
+            Publicar
+          </button>
         </div>
       </div>
     </div>
@@ -22,23 +32,49 @@ function Sidebar() {
 
 export function Content() {
   return (
-    <div className='bg-red-300 w-full h-full m-3'>
-      <h2>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt accusantium unde voluptates commodi amet cum tempore dolorem cumque, dicta blanditiis. Saepe, officia magnam! Deleniti molestiae necessitatibus minima aut dolore iusto?
+    <div>
+      <div className='main-content rounded content border grow'>
+        <div className="p-5">
+          <h2 className="text-2xl font-bold mb-3">¡Bienvenido a mi blog!</h2>
+          <p className="mb-5">
+            ¡Hola! Soy Alejandro Jiménez, un entusiasta desarrollador de software apasionado por la tecnología y el desarrollo web. En este espacio, compartiré contigo mis ideas, proyectos y pensamientos sobre diversos temas relacionados con la programación y la informática en general.
+          </p>
+          <h3 className="text-xl font-semibold mb-3">Sobre mí</h3>
+          <p className="mb-5">
+            Desde que descubrí mi interés por la programación, he estado explorando constantemente nuevas tecnologías y aprendiendo nuevas habilidades para mejorar como desarrollador. Mi objetivo es crear soluciones innovadoras y útiles que impacten positivamente en la vida de las personas.
+          </p>
+          <h3 className="text-xl font-semibold mb-3">Temas que encontrarás aquí</h3>
+          <p className="mb-5">
+            En este blog, encontraras algunos tips de programacion y en especial proyectos que yo he realizado con el fin de que tu tambien puedas ponerlos a prueba y aprendar al igual que yo el como desarrollar por ejemplo API'S
+            o trabajar con HTML, JS y css, etc.
+          </p>
+          <h3 className="text-xl font-semibold mb-3">¡Conéctate conmigo!</h3>
+          <p>
+            ¡No dudes en seguirme en mis redes sociales para estar al tanto de las últimas actualizaciones y conversar sobre tecnología!
+          </p>
+          <div className="mt-5 flex gap-3">
 
-      </h2>
-      <br />
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic excepturi voluptatum labore. Vitae nihil nam ut temporibus ex possimus sed laborum nulla repellat dolor, quos voluptatem obcaecati omnis tenetur quasi?</p>
+            <a href="https://www.instagram.com/jose_jc.java?igsh=YXo3dDN0b3Rya2Jq" className="text-blue-500 hover:underline">Instagram</a>
+            <br />
+            <a href="https://www.linkedin.com/in/josebraulioe/" className="text-blue-500 hover:underline">LinkedIn</a>
+            <br />
+            <a href="https://github.com/jjimenez2022152" className="text-blue-500 hover:underline">GitHub</a>
+            <br />
+          </div>
+        </div>
+        <ProjectsList />
+      </div>
+
     </div>
   )
 }
 
 function App() {
-  return <div className='flex bg-blue-200 w-full h-screen gap-4 p-4 md:p-12 items-start overflow-hidden'>
+  return <div className='container-screen'>
     <Sidebar />
-    <div className=' w-full h-full overflow-y-scroll scrollbar-none ' >
+    <div className="content-and-comments">
       <Outlet />
-      {/* <Comments/> */}
+      {/* <Coments /> */}
     </div>
   </div>
 }
